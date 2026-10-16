@@ -1,0 +1,31 @@
+<!-- 1.8 la partie color-dark -->
+<div class="container color-dark">
+  <div class="col">
+    <p>Un élément de liste</p>
+  </div>
+  <div class="col">
+    <!-- 2.1 j'affiche nbItems -->
+    <p>Ma liste d'éléments ({{ nbItems }})</p>
+  </div>
+</div>
+<!-- 1.8 La partie color-light -->
+<div class="container color-light">
+  <div class="col">
+    <p class="sm">Un nouvel élément de liste</p>
+  </div>
+  <div class="col">
+    <!-- 2.8) je rajoute le @for ici -->
+    @for (objectif of objectifs; track objectif) {
+      <p class="life-container">{{ objectif }}</p>
+    }
+  </div>
+  <div class="col">
+    <!-- 2.4je rajoute [(ngModel)] -->
+    <input type="text" class="txt" name="jsp" placeholder="..." [(ngModel)]="objectifText">
+    <!-- 2.4 on affiche objectifText ici -->
+    <p>{{ objectifText }}</p>
+    <!-- 2.2 [value] le property binding -->
+    <!-- 2.7(click) pour appeler ajoutItem -->
+    <input type="submit" class="btn" name="tkt" [value]="btnText" (click)="ajoutItem()">
+  </div>
+</div>
