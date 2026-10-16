@@ -26,11 +26,11 @@ export class Home {
   btnText: string = "Envoyer";
   //2.3 je rajoute objectifText
   objectifText: string = "";
-  // 2.5 création du tableau objectifs vide
-  objectifs: string[] = [];
+  // 1.3 objectifs est déplacé dans le service (tp5)
   //2.6 la fonction ajoutItem, je rajoute un élément avec push
   ajoutItem() {
-    this.objectifs.push(this.objectifText);
+    // 1.3 j'utilise le tableau du service (tp5)
+    this.monService.objectifs.push(this.objectifText);
     this.nbItems++;
     // 3.4 après 1 seconde je vais sur la page about
     setTimeout(() => {
@@ -39,6 +39,7 @@ export class Home {
   }
   //2.5 initialiser nbItems 
   ngOnInit() {
-    this.nbItems = this.objectifs.length;
+    // 1.3 j'utilise le tableau du service (tp5)
+    this.nbItems = this.monService.objectifs.length;
   }
 }
