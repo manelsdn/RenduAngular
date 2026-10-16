@@ -1,1 +1,8 @@
 <p>C'est {{ name }} !</p>
+
+<!-- 1.5 afficher les objectifs du service (tp5) -->
+<ol>
+  @for (objectif of monService.objectifs; track objectif) {
+    <li animate.enter="animation-ajout">{{ objectif }}</li>
+  }
+</ol>

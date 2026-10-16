@@ -18,7 +18,8 @@
     <!-- 1.3j'utilise le tableau du service (tp5) -->
     @for (objectif of monService.objectifs; track objectif) {
       <!-- 1.2 je rajoute animate.enter pour animer l'objectif -->
-      <p class="life-container" animate.enter="animation-ajout">{{ objectif }}</p>
+      <!-- 1.6 au clic j'ouvre consultAct avec l'indice (tp5) -->
+      <p class="life-container" animate.enter="animation-ajout" (click)="consulter($index)">{{ objectif }}</p>
     }
   </div>
   <div class="col">

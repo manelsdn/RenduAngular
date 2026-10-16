@@ -42,4 +42,8 @@ export class Home {
     // 1.3 j'utilise le tableau du service (tp5)
     this.nbItems = this.monService.objectifs.length;
   }
+  // 1.6 j'ouvre la page consultAct avec l'indice (tp5)
+  consulter(index: number) {
+    this.monRouteur.navigate(['consultAct', index]);
+  }
 }
