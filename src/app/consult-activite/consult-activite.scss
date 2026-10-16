@@ -1,0 +1,26 @@
+//le style des boutons
+button {
+  border: 0;
+  padding: .6em 1.2em;
+  font-size: 1em;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+//les couleurs des boutons 
+.btn-rouge {
+  background: #D9534F;
+}
+.btn-bleu {
+  background: #3B82F6;
+}
+.btn-vert {
+  background: #4CAF50;
+}
+
+//le champ texte pour modifier le titre
+input {
+  padding: .3em;
+  font-size: 1em;
+}

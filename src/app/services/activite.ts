@@ -11,4 +11,9 @@ export class ActiviteService {
   removeItem(index: number) {
     this.objectifs.splice(index, 1);
   }
+
+  // 1.9 modifier le titre d'un élément 
+  updateItem(index: number, titre: string) {
+    this.objectifs[index] = titre;
+  }
 }

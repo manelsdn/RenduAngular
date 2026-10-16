@@ -1,19 +1,23 @@
-<p>consult-activite works!</p>
-<!-- 3.8 j'affiche les paramètres -->
-<h3>Test récupération des paramètres:</h3>
-<ol>
-  <li>Paramètre 1 transmis: <b>{{ id }}</b></li>
-  <!-- 3.10 avec @if, le 2 paramètre s'affiche seulement s'il existe -->
-  @if (id2) {
-    <li>Paramètre 2 transmis: <b>{{ id2 }}</b></li>
-  }
-</ol>
-
 <!-- 1.7 le détail de l'activité (tp5) -->
 <h3>Détail de l'activité:</h3>
 <ol>
-  <li>Nom de l'activité: <b>{{ titre }}</b></li>
+  <!-- 1.9 en mode édition j'affiche un champ texte, sinon le titre en gras (tp5) -->
+  <li>Nom de l'activité:
+    @if (enEdition) {
+      <input type="text" name="titre" [(ngModel)]="titre">
+    } @else {
+      <b>{{ titre }}</b>
+    }
+  </li>
 </ol>
 
 <!-- 1.8 bouton pour supprimer -->
-<button (click)="supprimeElem(index)">Supprimer</button>
+<!-- 1.9 je rajoute la classe btn-rouge (tp5) -->
+<button class="btn-rouge" (click)="supprimeElem(index)">Supprimer</button>
+<!-- 1.9 les boutons Modifier et Retour, ou Sauvegarder  -->
+@if (enEdition) {
+  <button class="btn-bleu" (click)="sauvegarder()">Sauvegarder</button>
+} @else {
+  <button class="btn-bleu" (click)="modifier()">Modifier</button>
+  <button class="btn-vert" (click)="retour()">Retour</button>
+}
