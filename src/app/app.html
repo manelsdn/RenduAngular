@@ -1,12 +1,11 @@
-<!-- 1.5 router-outlet -->
-<router-outlet />
-
 <!-- 1.5 je rajoute la liste avec les liens Accueil et About -->
 <ul>
-  <li><a href="">Accueil</a></li>
-  <li><a href="">About</a></li>
+  <!-- 2.4 je mets routerLink pour naviguer -->
+  <li><a routerLink="/">Accueil</a></li>
+  <li><a routerLink="/about">About</a></li>
+  <!-- 3.2 je rajoute About2 avec href pour comparer -->
+  <li><a href="/about">About2</a></li>
 </ul>
 
-<!-- 1.5) je rajoute app-home -->
-<app-home></app-home>
-<app-about></app-about>
+<!-- 1.5 router-outlet -->
+<router-outlet />

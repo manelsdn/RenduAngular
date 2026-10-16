@@ -3,6 +3,8 @@ import { Component } from '@angular/core';
 //2.3 j'importe FormsModule 
 import { FormsModule } from '@angular/forms';
 import { NgClass } from '@angular/common';
+// 3.3 j'importe Router
+import { Router } from '@angular/router';
 
 @Component({
   //2.3 rajouter FormsModule dans les imports
@@ -12,6 +14,9 @@ import { NgClass } from '@angular/common';
   templateUrl: './home.html',
 })
 export class Home {
+  // 3.3 je rajoute monRouteur dans le constructeur
+  constructor(private monRouteur: Router) {}
+
   //2.1 je rajoute nbItems à 4
   nbItems: number = 4;
   //2.2 btnText, pour le texte du bouton
@@ -24,6 +29,10 @@ export class Home {
   ajoutItem() {
     this.objectifs.push(this.objectifText);
     this.nbItems++;
+    // 3.4 après 1 seconde je vais sur la page about
+    setTimeout(() => {
+      this.monRouteur.navigate(['about']);
+    }, 1000);
   }
   //2.5 initialiser nbItems 
   ngOnInit() {

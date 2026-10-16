@@ -16,7 +16,8 @@
   <div class="col">
     <!-- 2.8) je rajoute le @for ici -->
     @for (objectif of objectifs; track objectif) {
-      <p class="life-container">{{ objectif }}</p>
+      <!-- 1.2 je rajoute animate.enter pour animer l'objectif -->
+      <p class="life-container" animate.enter="animation-ajout">{{ objectif }}</p>
     }
   </div>
   <div class="col">

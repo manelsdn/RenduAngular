@@ -1,0 +1,10 @@
+<p>consult-activite works!</p>
+<!-- 3.8 j'affiche les paramètres -->
+<h3>Test récupération des paramètres:</h3>
+<ol>
+  <li>Paramètre 1 transmis: <b>{{ id }}</b></li>
+  <!-- 3.10 avec @if, le 2 paramètre s'affiche seulement s'il existe -->
+  @if (id2) {
+    <li>Paramètre 2 transmis: <b>{{ id2 }}</b></li>
+  }
+</ol>
